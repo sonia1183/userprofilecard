@@ -19,24 +19,24 @@ class Cards extends Component {
       });
   };
 
-  loadMore = () => {
-    this.setState(
-      prevState => ({
-        page: prevState.page + 1,
-        scrolling: true
-      }),
-      this.loadData
-    );
-  };
+//   loadMore = () => {
+//     this.setState(
+//       prevState => ({
+//         page: prevState.page + 1,
+//         scrolling: true
+//       }),
+//       this.loadData
+//     );
+//   };
 
-  componentDidMount() {
-    this.loadData();
-  }
+//   componentDidMount() {
+//     this.loadData();
+//   }
 
   render() {
     return (
-      <div className="clearfix">
-        <div className="row">
+      <div className="container">
+        <div className="list">
           {this.state.data.map(data => (
             <div className="col-md-4 animated fadeIn" key={data.id}>
               <div className="card">
@@ -44,11 +44,11 @@ class Cards extends Component {
                   <div className="avatar">
                     <img
                       src={data.avatar_url}
-                      className="card-img-top"
+                      className="card-img"
                       alt=""
                     />
                   </div>
-                  <h5 className="card-title">
+                  <h5 className="card-username">
                     {(data.login)}
                   </h5>
                   <p className="card-text">
